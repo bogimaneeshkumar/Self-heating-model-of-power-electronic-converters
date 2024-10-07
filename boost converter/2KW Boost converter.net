@@ -1,0 +1,22 @@
+* C:\Users\Maneesh kumar\OneDrive\Documents\2KW Boost converter.asc
+Vin IN 0 60
+L1 IN N001 0.5m Rser=0
+C1 OUT 0 200µ
+V§J1 N002 0 PULSE(-3 15 0 1n 1n {D*Ts} {Ts})
+R1 OUT 0 28.8
+R2 N003 N002 2.5
+D1 N001 OUT D
+XU1 N001 N003 0 Tj Tc C3M0065090D
+V1 Tc 0 25
+.model D D
+.lib C:\Users\Maneesh kumar\AppData\Local\LTspice\lib\cmp\standard.dio
+.param D = 0.5
+.param Ts = 10u
+.tran 0 0.045 8m
+* Vin = 120Vdc Vo = 240Vdc Po = 2KW  fsw = 100KHz
+.options Gmin=1e-7 Abstol=1e-7 reltol=1e-2 chgtol=1e-9
+.IC V(OUT)=220
+* Notes:\n1) It is the customer's responsibility to operation in the actual prototype.\n2) Modifying circuit may affect the performance of the design.\nCopyright © 2016 Wolfspeed Inc. All rights reserved.
+.lib C:\Users\Maneesh kumar\Downloads\all files\Wolfspeed_SPICE_Models\Wolfspeed_SPICE_Models\Discretes\C3M0065090D.lib
+.backanno
+.end
